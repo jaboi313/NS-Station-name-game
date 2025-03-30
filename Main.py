@@ -5,7 +5,7 @@ csv = CSV()
 anagram = Anagram("Lengte mijnen", csv.read_whole_column('Station'))
 
 if __name__ == "__main__":
-    print(anagram.anagram())
-    print(anagram.get_combinations_made())
-    print(csv.get_row_from_value(anagram.anagram(), 'Station'))
-    print(csv.get_row_from_value_one_colum(anagram.anagram(), 'Station', 'Code'))
+    print(anagram.solve_fast())
+    print(anagram.get_combinations_made("fast"))
+    print(csv.get_row_from_value(anagram.solve_fast(), 'Station'))
+    print(csv.get_row_from_value_one_colum(anagram.solve_fast(), 'Station', 'Code'))
