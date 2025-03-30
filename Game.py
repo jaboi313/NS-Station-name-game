@@ -1,15 +1,10 @@
-import csv
-import pandas as pd
+from ClassCSV import CSV
+from ClassAnagram import Anagram
 
+csv = CSV()
+anagram = Anagram("Lengte mijnen", csv.read_whole_column('Station'))
 
-def read_file(file_path:str = None) -> list:
-    with open(file_path, 'r') as infile:
-        info = csv.reader(infile, delimiter= ',')
-    return info
-
-
-
-def search(country:str = None)-> str:
-    read_file('Stations_info.csv')
-    row = 0
-    if country == None:
+print(anagram.anagram())
+print(anagram.get_combinations_made())
+print(csv.get_row_from_value(anagram.anagram(), 'Station'))
+print(csv.get_row_from_value_one_colum(anagram.anagram(), 'Station', 'Code'))
