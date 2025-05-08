@@ -2,10 +2,11 @@ from ClassCSV import CSV
 from ClassAnagram import Anagram
 
 csv = CSV()
-anagram = Anagram("Lengte mijnen", csv.read_whole_column('Station'))
+anagram = Anagram(input("Puzzelwoord: "), csv.read_whole_column('Station'))
 
 if __name__ == "__main__":
-    print(anagram.solve_fast())
+    solve = anagram.solve_fast()
+    print(solve)
     print(anagram.get_combinations_made("fast"))
-    print(csv.get_row_from_value(anagram.solve_fast(), 'Station'))
-    print(csv.get_row_from_value_one_colum(anagram.solve_fast(), 'Station', 'Code'))
+    print(csv.get_row_from_value(solve, 'Station'))
+    print(csv.get_row_from_value_one_colum(solve, 'Station', 'Code'))
